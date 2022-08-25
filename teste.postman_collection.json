@@ -1,0 +1,264 @@
+{
+	"info": {
+		"_postman_id": "d0371faf-c0d5-429a-9e94-dc7cf3d7ab3c",
+		"name": "teste",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17686407"
+	},
+	"item": [
+		{
+			"name": "Autenticação",
+			"item": [
+				{
+					"name": "Get anônimo de exemplo",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"Gabriel\",\r\n    \"password\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44319/api/Auth/anonymous",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44319",
+							"path": [
+								"api",
+								"Auth",
+								"anonymous"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get retornando \"gerente\", acessado por token de gerente",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkdhYnJpZWwiLCJyb2xlIjoibWFuYWdlciIsIm5iZiI6MTY2MTM5OTcxOSwiZXhwIjoxNjYxNTA3NzE5LCJpYXQiOjE2NjEzOTk3MTl9.FqGvSjKg8pubd6o0i4ZLRAwNDKdJVamUgfGvpssJMqs",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:44319/api/Auth/manager",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44319",
+							"path": [
+								"api",
+								"Auth",
+								"manager"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get retornando \"funcionário\", acessado pelos tokens de funcionário ou gerente",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkdhYnJpZWwiLCJyb2xlIjoibWFuYWdlciIsIm5iZiI6MTY2MTM5OTkyNiwiZXhwIjoxNjYxNTA3OTI2LCJpYXQiOjE2NjEzOTk5MjZ9.6itl-0Jaj8r-j65RZEp4W5wRTThLUmXA7A-frU66UJo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:44319/api/Auth/employee",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44319",
+							"path": [
+								"api",
+								"Auth",
+								"employee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get retornando usuário autenticado pelo token",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkdhYnJpZWwiLCJyb2xlIjoibWFuYWdlciIsIm5iZiI6MTY2MTM5OTkyNiwiZXhwIjoxNjYxNTA3OTI2LCJpYXQiOjE2NjEzOTk5MjZ9.6itl-0Jaj8r-j65RZEp4W5wRTThLUmXA7A-frU66UJo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:44319/api/Auth/authenticated",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44319",
+							"path": [
+								"api",
+								"Auth",
+								"authenticated"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Novo login gerando token (Gabriel = gerente, Matheus = funcionário)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"Gabriel\",\r\n    \"password\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44319/api/Auth/login",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44319",
+							"path": [
+								"api",
+								"Auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Filmes",
+			"item": [
+				{
+					"name": "Listar todos os filmes (take = quantidade máxima por pagina, skip = onde inicia a contagem)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44319/api/Movies/list?skip=0&take=30",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44319",
+							"path": [
+								"api",
+								"Movies",
+								"list"
+							],
+							"query": [
+								{
+									"key": "skip",
+									"value": "0"
+								},
+								{
+									"key": "take",
+									"value": "30"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar todos os filmes pelas primeiras letras do nome do filme (firstLetters = primeiras letras do filme) com autenticação de funcionário ou gerente",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkdhYnJpZWwiLCJyb2xlIjoibWFuYWdlciIsIm5iZiI6MTY2MTM5OTkyNiwiZXhwIjoxNjYxNTA3OTI2LCJpYXQiOjE2NjEzOTk5MjZ9.6itl-0Jaj8r-j65RZEp4W5wRTThLUmXA7A-frU66UJo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:44319/api/Movies/listByName?firstLetters=Bat",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44319",
+							"path": [
+								"api",
+								"Movies",
+								"listByName"
+							],
+							"query": [
+								{
+									"key": "firstLetters",
+									"value": "Bat"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get por id com autenticação de Gerente",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkdhYnJpZWwiLCJyb2xlIjoibWFuYWdlciIsIm5iZiI6MTY2MTM5OTkyNiwiZXhwIjoxNjYxNTA3OTI2LCJpYXQiOjE2NjEzOTk5MjZ9.6itl-0Jaj8r-j65RZEp4W5wRTThLUmXA7A-frU66UJo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:44319/api/Movies/4",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44319",
+							"path": [
+								"api",
+								"Movies",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
