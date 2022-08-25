@@ -6,7 +6,8 @@ Pequena api com endpoints retornando uma lista de filmes filtrados pelas 3 prime
 * Clone este repositório, com o seguinte comando: git clone https://github.com/gabrielpcellis/teste-gabriel.git
 * Abra a solução em seu Visual Studio Community
 * Execute o projeto "ApiTeste"
-* Abre o Postman, importe a coleção disponibilizada (https://github.com/gabrielpcellis/teste-gabriel/blob/main/teste.postman_collection.json) e execute as requisições
+* Abre o Postman, acesse a coleção disponibilizada (https://github.com/gabrielpcellis/teste-gabriel/blob/main/teste.postman_collection.json), e copiando o conteúdo em um arquivo .txt, importe no postman. 
+* Execute as requisições
 
 ## Pacotes utilizados:
 * Microsoft.EntityFrameworkCore
