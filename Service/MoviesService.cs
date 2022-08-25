@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace ApiTeste.Service
 {
-    public class MoviesService
+    public static class MoviesService
     {
-        public List<Movies> CreateMoviesList()
+        public static List<Movies> CreateMoviesList()
         {
             var movies = new List<Movies>()
             {
