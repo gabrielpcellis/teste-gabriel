@@ -1,5 +1,5 @@
 # Teste
-Pequena api com endpoints retornando uma lista de filmes filtrados pelas 3 primeiras letras, buscando apenas 20 itens por página, utilizando tokens de autenticação para permissão de acesso às apis, e endpoints para criação de tokens com níveis de acesso. 
+Pequena api com alguns endpoints referentes à autenticação de usuários e filmes (objetos mockados), utilizando tokens de autenticação para permissão de acesso às apis, e endpoints para criação de tokens com níveis de acesso. Foi utilizado o Swagger para documentação da mesma, porém disponibilizada coleção para requisições com o Postman.
 
 ## Instruções 
 * Inicialize um repositório em sua máquina;
